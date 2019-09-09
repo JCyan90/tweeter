@@ -1,6 +1,8 @@
 nav {
   height: 120px;
   position: fixed;
+  display: flex;
+  justify-content: space-between;
   top : 0;
   right : 0;
   left: 0;
@@ -10,6 +12,6 @@ nav {
   padding: 1.5em;
  }
 
- nav span {
+ nav #logo {
   font-family: 'Bungee', cursive, sans-serif;
  }
