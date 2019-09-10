@@ -1,4 +1,4 @@
-header {
+.your-account {
   height: 400px;
   position: absolute;
   top: 120px;
@@ -9,7 +9,7 @@ header {
   text-align: center;
 }
 
-header h2 {
+.your-account h2 {
   position: relative;
   bottom: 30px;
 }
