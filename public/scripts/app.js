@@ -67,4 +67,25 @@ const createTweetElement = function(tweetObj) {
 
 $(document).ready(function() {
   renderTweets(data);
+
+  $("form").on("submit", function() {
+    event.preventDefault();
+    console.log('Performing AJAX request...')
+    const $data = $(this).serialize()
+    $.ajax({
+      url: '/tweets',
+      method: 'POST',
+      data: $data
+    })
+      .done( (data) => {
+        console.log('Success!');
+        console.log(data);
+      })
+      .fail( (err) => {
+        console.log("Error:", err);
+      })
+      .always( () => {
+        console.log("Done!")
+      });
+  });
 });
