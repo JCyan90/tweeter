@@ -33,7 +33,7 @@
 
 const renderTweets = function(tweets) {
   return tweets.forEach(tweet => {
-    $('#tweets-container').append(createTweetElement(tweet));
+    $('#tweets-container').prepend(createTweetElement(tweet));
   });
 };
 
@@ -81,6 +81,12 @@ const loadTweets = (url, method, cb) => {
     });
 };
 
+const refreshPage = () => {
+  $('textarea').val('');
+  $('.counter').text(140);
+  loadTweets("/tweets", "GET", renderTweets);
+};
+
 const submitHandler = (text) => {
   if (!text) {
     return alert("Your tweet is empty");
@@ -96,6 +102,7 @@ const submitHandler = (text) => {
     })
       .done( () => {
         console.log('Success!');
+        refreshPage();
       })
       .fail( (err) => {
         console.log("Error:", err);
