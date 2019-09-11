@@ -103,5 +103,6 @@ $(document).ready(function() {
 
   $("nav button").on("click", () => {
     $(".new-tweet").slideToggle();
+    $("textarea").focus();
   })
 });
