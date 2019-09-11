@@ -100,4 +100,8 @@ $(document).ready(function() {
     // submitHandler($(this).serialize());
     submitHandler($('textarea').val());
   });
+
+  $("nav button").on("click", () => {
+    $(".new-tweet").slideToggle();
+  })
 });
