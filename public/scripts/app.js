@@ -3,6 +3,11 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+const escape =  function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
 
 const renderTweets = function(tweets) {
   return tweets.forEach(tweet => {
@@ -21,7 +26,7 @@ const createTweetElement = function(tweetObj) {
       <span class="handle">${tweetObj.user.handle}</span>
     </header>
     <div class="content">
-        ${tweetObj.content.text}
+        ${escape(tweetObj.content.text)}
     </div>
     <footer>
       <span class="date">
