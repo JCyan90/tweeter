@@ -110,7 +110,4 @@ $(document).ready(function() {
     $("textarea").focus();
   });
 
-  // $("body").on("click", () => {
-  //   $(".error-message").slideUp();
-  // });
 });
