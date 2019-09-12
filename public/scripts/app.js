@@ -71,7 +71,9 @@ const submitHandler = (text) => {
     $('.error-message strong').text("Your tweet is empty")
     return;
   } else if (text.length > 140) {
-    return $('.error-message').slideDown().text(`Your tweet is too long: ${text.length} characters`);
+    $('.error-message').slideDown();
+    $('.error-message strong').text(`Your tweet is too long: ${text.length} characters`);
+    return;
   } else {
     $.ajax({
       url: '/tweets',
