@@ -67,9 +67,11 @@ const refreshPage = () => {
 
 const submitHandler = (text) => {
   if (!text) {
-    return alert("Your tweet is empty");
+    $('.error-message').slideDown();
+    $('.error-message strong').text("Your tweet is empty")
+    return;
   } else if (text.length > 140) {
-    return alert(`Your tweet is too long: ${text.length} characters`)
+    return $('.error-message').slideDown().text(`Your tweet is too long: ${text.length} characters`);
   } else {
     $.ajax({
       url: '/tweets',
@@ -94,15 +96,21 @@ const submitHandler = (text) => {
 $(document).ready(function() {
   loadTweets("/tweets", "GET", renderTweets);
 
+  $(".error-message").hide();
+
   $("form").on("submit", function() {
     event.preventDefault();
+    $(".error-message").slideUp();
     console.log('Performing AJAX request...');
-    // submitHandler($(this).serialize());
     submitHandler($('textarea').val());
   });
 
   $("nav button").on("click", () => {
     $(".new-tweet").slideToggle();
     $("textarea").focus();
-  })
+  });
+
+  // $("body").on("click", () => {
+  //   $(".error-message").slideUp();
+  // });
 });
