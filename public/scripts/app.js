@@ -10,9 +10,13 @@ const escape =  function(str) {
 }
 
 const renderTweets = function(tweets) {
-  return tweets.forEach(tweet => {
-    $('#tweets-container').prepend(createTweetElement(tweet));
-  });
+  if (Array.isArray(tweets)) {
+    return tweets.forEach(tweet => {
+      $('#tweets-container').prepend(createTweetElement(tweet));
+    });
+  } else {
+    return $('#tweets-container').prepend(createTweetElement(tweets));
+  };
 };
 
 const createTweetElement = function(tweetObj) {
@@ -59,10 +63,26 @@ const loadTweets = (url, method, cb) => {
     });
 };
 
+const loadNewTweet = (url, method, cb) => {
+  $.ajax({
+    url,
+    method,
+  })
+    .done(data => {
+      cb(data[data.length - 1]);
+    })
+    .fail(err => {
+      console.log('Error:', err)
+    })
+    .always( () => {
+      console.log("Tweets loaded!");
+    });
+};
+
 const refreshPage = () => {
   $('textarea').val('');
   $('.counter').text(140);
-  loadTweets("/tweets", "GET", renderTweets);
+  loadNewTweet("/tweets", "GET", renderTweets);
 };
 
 const submitHandler = (text) => {
@@ -97,7 +117,6 @@ const submitHandler = (text) => {
 
 $(document).ready(function() {
   loadTweets("/tweets", "GET", renderTweets);
-
   $(".error-message").hide();
 
   $("form").on("submit", function() {
