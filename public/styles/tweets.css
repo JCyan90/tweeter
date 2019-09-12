@@ -16,10 +16,13 @@
 }
 
 .wrapper {
-  width: 160px;
+  width: 250px;
   display:  flex;
-  justify-content: space-between;
   align-items: center;
+}
+
+.wrapper img {
+  margin-right: .5em;
 }
 
 .handle {

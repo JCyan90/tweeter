@@ -1,7 +1,5 @@
 .your-account {
   height: 400px;
-  /* position: absolute;
-  top: 120px; */
   left: 0;
   right: 0;
   background-color: #9de4e9;
@@ -25,7 +23,6 @@
     width: 35%;
     margin: 1em;
     padding-top: 1em;
-    position: sticky;
   }
 
   main {
