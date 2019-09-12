@@ -37,6 +37,7 @@
   padding: 1.5em;
   padding-left: 1em;
   border-bottom: 4px solid #545149;
+  overflow-wrap: break-word;
 }
 
 .tweet footer {
