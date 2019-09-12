@@ -107,6 +107,7 @@ $(document).ready(function() {
 
   $("nav button").on("click", () => {
     $(".new-tweet").slideToggle();
+    $(".error-message").slideUp();
     $("textarea").focus();
   });
 
