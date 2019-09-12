@@ -1,7 +1,7 @@
 .your-account {
   height: 400px;
-  position: absolute;
-  top: 120px;
+  /* position: absolute;
+  top: 120px; */
   left: 0;
   right: 0;
   background-color: #9de4e9;
@@ -12,4 +12,23 @@
 .your-account h2 {
   position: relative;
   bottom: 30px;
+}
+
+@media (min-width: 1024px) {
+
+  body {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  .your-account {
+    width: 35%;
+    margin: 1em;
+    padding-top: 1em;
+    position: sticky;
+  }
+
+  main {
+    width: 50%;
+  }
 }
