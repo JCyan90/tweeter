@@ -20,12 +20,14 @@
   }
 
   .your-account {
+    position: fixed;
     width: 35%;
-    margin: 1em;
+    margin: 1em 1em 1em 2em;
     padding-top: 1em;
   }
 
   main {
     width: 50%;
+    margin-right: 2em;
   }
 }
