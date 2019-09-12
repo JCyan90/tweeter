@@ -44,3 +44,7 @@ main button {
   border-radius: 60%;
   outline: none;
 }
+
+main button:hover {
+  cursor: pointer;
+}
