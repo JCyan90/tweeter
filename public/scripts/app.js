@@ -118,6 +118,7 @@ const submitHandler = (text) => {
 $(document).ready(function() {
   loadTweets("/tweets", "GET", renderTweets);
   $(".error-message").hide();
+  $(".new-tweet").hide();
 
   $("form").on("submit", function() {
     event.preventDefault();
