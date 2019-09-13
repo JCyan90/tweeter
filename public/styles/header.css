@@ -2,8 +2,8 @@
   height: 400px;
   left: 0;
   right: 0;
-  background-color: #9de4e9;
-  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+  background-color: #6dbef5;
+background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
   text-align: center;
 }
 
@@ -13,7 +13,7 @@
 }
 
 @media (min-width: 1024px) {
-
+  
   body {
     display: flex;
   }
@@ -23,6 +23,7 @@
     width: 35%;
     margin: 1em 1em 1em 2em;
     padding-top: 1em;
+    border-radius: 5%;
   }
 
   main {
