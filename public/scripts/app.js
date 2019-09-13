@@ -20,7 +20,20 @@ const renderTweets = function(tweets) {
 };
 
 const createTweetElement = function(tweetObj) {
-  const date = new Date(tweetObj.created_at);
+  const dateOfTweet = new Date(tweetObj.created_at);
+  
+  const timeSinceTweet = () => {
+    const now = new Date();
+    const msInDay = 24 * 60 * 60 * 1000;
+    const diffInDay = (now - dateOfTweet) / msInDay;
+    if (diffInDay < 31) {
+      return `${Math.floor(diffInDay / 365)} days`;
+    } else if (diffInDay <= 365) {
+      return `${Math.floor(diffInDay / 31)} months`;
+    } else {
+      return `${Math.floor(diffInDay / 365)} years`;
+    }
+  }
 
   const element = `
     <article class="tweet">
@@ -36,7 +49,7 @@ const createTweetElement = function(tweetObj) {
     </div>
     <footer>
       <span class="date">
-      ${date.toLocaleString()}
+      Posted ${timeSinceTweet()} ago
       </span>
       <div class="actions">
         <img src="/images/flag.png">
