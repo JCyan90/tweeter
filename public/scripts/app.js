@@ -3,6 +3,8 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+
+ // Prevent an XSS attack
 const escape =  function(str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
@@ -19,6 +21,7 @@ const renderTweets = function(tweets) {
   }
 };
 
+// Create the tweet and its HTML
 const createTweetElement = function(tweetObj) {
   const dateOfTweet = new Date(tweetObj.created_at);
   
@@ -65,6 +68,7 @@ const createTweetElement = function(tweetObj) {
   return element;
 };
 
+// Add tweets to the HTML page
 const loadTweets = (url, method, cb) => {
   $.ajax({
     url,
@@ -81,6 +85,7 @@ const loadTweets = (url, method, cb) => {
     });
 };
 
+// Add a submitted tweet to the HTML page
 const loadNewTweet = (url, method, cb) => {
   $.ajax({
     url,
@@ -97,12 +102,14 @@ const loadNewTweet = (url, method, cb) => {
     });
 };
 
+// Reset the compose form
 const refreshPage = () => {
   $('textarea').val('');
   $('.counter').text(140);
   loadNewTweet("/tweets", "GET", renderTweets);
 };
 
+// Check if the tweet submitted isn't empty/too long
 const submitHandler = (text) => {
   if (!text) {
     $('.error-message').slideDown();

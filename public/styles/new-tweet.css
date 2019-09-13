@@ -1,3 +1,4 @@
+/* Error message box */
 .error-message {
   border: 3px solid red;
   padding: 10px;
@@ -13,7 +14,7 @@
   margin-left: .8em;
 }
 
- @keyframes slide-in-top {
+@keyframes slide-in-top {
   0% {
     transform: translateY(-1000px);
     opacity: 0;
@@ -24,6 +25,7 @@
   }
 }
 
+/* Compose box */
 form {
   display: flex;
   flex-wrap: wrap;

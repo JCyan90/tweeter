@@ -32,6 +32,7 @@ main {
   margin: auto;
 }
 
+/* "Scroll back to top" button */
 main button {
   background-color: rgb(230, 47, 47);
   position: fixed;

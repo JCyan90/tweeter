@@ -1,3 +1,5 @@
+// Behaviour of the "scroll back to top" button
+
 const backToTop = () => {
   $("html, body").animate({ scrollTop: 0 }, '500', "linear", () => {
     $(".new-tweet").slideDown();
