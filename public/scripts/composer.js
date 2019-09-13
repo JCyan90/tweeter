@@ -5,11 +5,11 @@ const backToTop = () => {
   });
 };
 
-$(document).ready( ()  => {
+$(document).ready(()  => {
 
   $('main  button').hide();
 
-  $(window).scroll( () => {
+  $(window).scroll(() => {
     if ($(window).scrollTop() > 400) {
       $('main  button').fadeIn();
       $('nav .new-msg').fadeOut();

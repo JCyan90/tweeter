@@ -7,7 +7,7 @@ const escape =  function(str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
-}
+};
 
 const renderTweets = function(tweets) {
   if (Array.isArray(tweets)) {
@@ -16,7 +16,7 @@ const renderTweets = function(tweets) {
     });
   } else {
     return $('#tweets-container').prepend(createTweetElement(tweets));
-  };
+  }
 };
 
 const createTweetElement = function(tweetObj) {
@@ -39,7 +39,7 @@ const createTweetElement = function(tweetObj) {
     } else {
       return `${Math.floor(diffInDay / 365)} years`;
     }
-  }
+  };
 
   const element = `
     <article class="tweet">
@@ -66,7 +66,7 @@ const createTweetElement = function(tweetObj) {
     </article>
   `;
   return element;
-}
+};
 
 const loadTweets = (url, method, cb) => {
   $.ajax({
@@ -77,9 +77,9 @@ const loadTweets = (url, method, cb) => {
       cb(data);
     })
     .fail(err => {
-      console.log('Error:', err)
+      console.log('Error:', err);
     })
-    .always( () => {
+    .always(() => {
       console.log("Tweets loaded!");
     });
 };
@@ -93,9 +93,9 @@ const loadNewTweet = (url, method, cb) => {
       cb(data[data.length - 1]);
     })
     .fail(err => {
-      console.log('Error:', err)
+      console.log('Error:', err);
     })
-    .always( () => {
+    .always(() => {
       console.log("Tweets loaded!");
     });
 };
@@ -109,7 +109,7 @@ const refreshPage = () => {
 const submitHandler = (text) => {
   if (!text) {
     $('.error-message').slideDown();
-    $('.error-message strong').text("Your tweet is empty")
+    $('.error-message strong').text("Your tweet is empty");
     return;
   } else if (text.length > 140) {
     $('.error-message').slideDown();
@@ -123,17 +123,17 @@ const submitHandler = (text) => {
         text
       }
     })
-      .done( () => {
+      .done(() => {
         console.log('Success!');
         refreshPage();
       })
-      .fail( (err) => {
+      .fail((err) => {
         console.log("Error:", err);
       })
-      .always( () => {
-        console.log("Done!")
+      .always(() => {
+        console.log("Done!");
       });
-  };
+  }
 };
 
 $(document).ready(function() {
