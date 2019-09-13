@@ -14,6 +14,13 @@ nav {
 
  nav #logo {
   font-family: 'Bungee', cursive, sans-serif;
+  width: 20%;
+  display: flex;
+  align-items: center;
+ }
+
+ nav #bird {
+   margin-right: 5%;
  }
 
  .new-msg {
