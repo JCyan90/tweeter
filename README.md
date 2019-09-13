@@ -4,9 +4,9 @@ Tweeter is a simple and responsive single-page Twitter clone built using HTML, C
 
 ## Final product
 
-!["Desktop view"]()
-!["Compose your tweet"]()
-!["Tablet view and error message"]()
+!["Desktop view"](https://github.com/JCyan90/tweeter/blob/master/docs/Screenshot1.png?raw=true)
+!["Compose your tweet"](https://github.com/JCyan90/tweeter/blob/master/docs/Screenshot2.png?raw=true)
+!["Tablet view and error message"](https://github.com/JCyan90/tweeter/blob/master/docs/Screenshot3.png?raw=true)
 
 ## Getting Started
 
