@@ -48,3 +48,23 @@ main button {
 main button:hover {
   cursor: pointer;
 }
+
+@media (min-width: 1024px) {
+  
+  body {
+    display: flex;
+  }
+
+  .your-account {
+    position: fixed;
+    width: 35%;
+    margin: 1em 1em 1em 2em;
+    padding-top: 1em;
+    border-radius: 5%;
+  }
+
+  main {
+    width: 50%;
+    margin-right: 2em;
+  }
+}
