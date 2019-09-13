@@ -27,10 +27,7 @@ const createTweetElement = function(tweetObj) {
     const msInDay = 24 * 60 * 60 * 1000;
     const diffInDay = (now - dateOfTweet) / msInDay;
     const diffInHours = diffInDay * 24;
-    const diffInMinutes = diffInHours * 60;
-    if (Math.floor(diffInHours) === 0) {
-      return `${Math.floor(diffInMinutes)} minutes`;
-    } else if (Math.floor(diffInDay / 365) === 0) {
+    if (Math.floor(diffInDay / 365) === 0) {
       return `${Math.floor(diffInHours)} hours`;
     } else if (diffInDay < 31) {
       return `${Math.floor(diffInDay / 365)} days`;
