@@ -20,6 +20,8 @@ const renderTweets = function(tweets) {
 };
 
 const createTweetElement = function(tweetObj) {
+  const date = new Date(tweetObj.created_at);
+
   const element = `
     <article class="tweet">
     <header>
@@ -34,7 +36,7 @@ const createTweetElement = function(tweetObj) {
     </div>
     <footer>
       <span class="date">
-      ${tweetObj.created_at}
+      ${date.toLocaleString()}
       </span>
       <div class="actions">
         <img src="/images/flag.png">
