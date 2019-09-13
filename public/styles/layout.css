@@ -49,6 +49,12 @@ main button:hover {
   cursor: pointer;
 }
 
+@media (max-width: 500px) {
+  nav #tweeter {
+    display: none;
+  }
+}
+
 @media (min-width: 1024px) {
   
   body {
