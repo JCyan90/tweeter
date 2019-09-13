@@ -26,7 +26,13 @@ const createTweetElement = function(tweetObj) {
     const now = new Date();
     const msInDay = 24 * 60 * 60 * 1000;
     const diffInDay = (now - dateOfTweet) / msInDay;
-    if (diffInDay < 31) {
+    const diffInHours = diffInDay * 24;
+    const diffInMinutes = diffInHours * 60;
+    if (Math.floor(diffInHours) === 0) {
+      return `${Math.floor(diffInMinutes)} minutes`;
+    } else if (Math.floor(diffInDay / 365) === 0) {
+      return `${Math.floor(diffInHours)} hours`;
+    } else if (diffInDay < 31) {
       return `${Math.floor(diffInDay / 365)} days`;
     } else if (diffInDay <= 365) {
       return `${Math.floor(diffInDay / 31)} months`;
@@ -49,7 +55,7 @@ const createTweetElement = function(tweetObj) {
     </div>
     <footer>
       <span class="date">
-      Posted ${timeSinceTweet()} ago
+      ${timeSinceTweet()} ago
       </span>
       <div class="actions">
         <img src="/images/flag.png">
